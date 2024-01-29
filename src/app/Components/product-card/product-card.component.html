@@ -1,0 +1,53 @@
+<div class="mycard card child mb-4 ">
+  <div class="parent text-center"> <!-- Added text-center -->
+    <img src="{{user?.Image}}" class="w-75" />
+    <div>
+      <div class="d-flex justify-content-start align-items-end h-100">
+        <!-- <h5><span class="badge bg-primary ms-2">New</span></h5> -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-body text-center">
+    <!-- Card Details -->
+    <button type="button" class="border-0 bg-transparent" (click)="ItemDetails()" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <p class="card-title fs-5 fw-medium">{{user?.Name}}</p>
+      <!-- <p class="text-reset">{{user?.Description}}</p> -->
+      <p class="fs-6">{{user?.Sizes}}</p>
+      <p class="mb-3">{{user?.price | currency:'EGP'}}</p>
+      <!-- @if (user.smallPrice) {
+      <p class="mb-3">{{user?.smallPrice}}</p>
+      }
+      @else if (user.mediumPrice) {
+      <p class="mb-3">{{user?.mediumPrice}}</p>
+      }
+      @else {
+      <p class="mb-3">{{user?.largePrice}}</p>
+      }  -->
+    </button>
+    <!-- Card Buttons -->
+    <div class="d-flex justify-content-around">
+      <div><button class="btn btn-danger" (click)="Decreament()"><i class="fa-solid fa-trash-can"></i></button></div>
+      <p class="fs-4">{{user.quantity}}</p>
+      <div>
+        <!-- <button class="btn btn-success" (click)="Increament()"><i class="fa-solid fa-plus"></i></button> -->
+
+        <button (click)="Increament()" type="button " class="btn button btn-success" id="liveToastBtn"> <i class="fa-solid fa-plus"></i></button> 
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <!-- <div class="toast-header"> 
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">Bootstrap</strong> 
+        <small>11 mins ago</small> 
+         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div> -->
+        <div class="toast-body">
+         Add to cart 🍕
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
